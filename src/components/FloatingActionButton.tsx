@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Platform, StyleSheet, Text, TouchableNativeFeedback, TouchableOpacity, View } from 'react-native'
 
 /**
  * Interface for the properties received in props
@@ -11,22 +11,49 @@ interface Props {
 }
 
 const FloatingActionButton = (props: Props) => {
-  return (
-    <TouchableOpacity
-        onPress={props.onPress}
-        style={[
-            styles.buttonBottom,
-            (props.position === 'bl') 
-                ? styles.left
-                : styles.right]}
-        >
-        <View style={styles.floatingButton}>
-            <Text style={styles.floatingButtonText}>
-                {props.title}
-            </Text>
+    const androidBtn = () => {
+        return (
+            <View 
+            style={[
+                styles.buttonBottom,
+                (props.position === 'bl') 
+                    ? styles.left
+                    : styles.right]}>
+            <TouchableNativeFeedback
+                onPress={props.onPress}
+                background={TouchableNativeFeedback.Ripple('#555', true, 35)} //Android only
+                >
+                <View style={styles.floatingButton}>
+                    <Text style={styles.floatingButtonText}>
+                        {props.title}
+                    </Text>
+                </View>
+            </TouchableNativeFeedback>
         </View>
-    </TouchableOpacity>
-  )
+        )
+    }
+
+    const iosBtn = () => {
+        return (
+        <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={props.onPress}
+            style={[
+                styles.buttonBottom,
+                (props.position === 'bl') 
+                    ? styles.left
+                    : styles.right]}
+            >
+            <View style={styles.floatingButton}>
+                <Text style={styles.floatingButtonText}>
+                    {props.title}
+                </Text>
+            </View>
+        </TouchableOpacity>
+        )
+    }
+
+    return Platform.OS === 'ios' ? iosBtn() : androidBtn();
 }
 
 const styles = StyleSheet.create({

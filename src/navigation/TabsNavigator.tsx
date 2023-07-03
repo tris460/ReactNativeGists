@@ -1,14 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import BoxObjectModel from '../screens/BoxObjectModel';
-import Calculator from '../screens/Calculator';
-import Counter from '../screens/Counter';
-import Dimentions from '../screens/Dimentions';
-import HelloWorld from '../screens/HelloWorld';
 import MenuStackNavigator from '../screens/MenuStackNavigator';
-import Position from '../screens/Position';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Platform, Text } from 'react-native';
+import { TopTabNavigator } from './TopTabNavigator';
 
 const BottomTabIOS = createBottomTabNavigator();
 const BottomTabAndroid = createMaterialBottomTabNavigator();
@@ -27,23 +22,8 @@ const TabsNavigatorIOS = () => {
                     case 'MenuStackNavigator':
                         iconName='MSN'
                         break;
-                    case 'BoxObjectModel':
-                        iconName='BOM'
-                        break;
-                    case 'Calculator':
-                        iconName='Ca'
-                        break;
-                    case 'Counter':
-                        iconName='Co'
-                        break;
-                    case 'Dimentions':
-                        iconName='Di'
-                        break;
-                    case 'HelloWorld':
-                        iconName='HW'
-                        break;
-                    case 'Position':
-                        iconName='Po'
+                    case 'TopTabNavigator':
+                        iconName='TTN'
                         break;
                 }
                 return <Text style={{color}}>{iconName}</Text>
@@ -51,12 +31,7 @@ const TabsNavigatorIOS = () => {
         })}
         >
       <BottomTabIOS.Screen name="MenuStackNavigator" options={{ title: 'Menu' }} component={MenuStackNavigator} />
-      <BottomTabIOS.Screen name="BoxObjectModel" component={BoxObjectModel} />
-      <BottomTabIOS.Screen name="Calculator" component={Calculator} />
-      <BottomTabIOS.Screen name="Counter" component={Counter} />
-      <BottomTabIOS.Screen name="Dimentions" component={Dimentions} />
-      <BottomTabIOS.Screen name="HelloWorld" component={HelloWorld} />
-      <BottomTabIOS.Screen name="Position" component={Position} />
+      <BottomTabIOS.Screen name='TopTabNavigator' component={TopTabNavigator} />
     </BottomTabIOS.Navigator>
   );
 }
@@ -76,23 +51,8 @@ const TabsNavigatorAndroid = () => {
                     case 'MenuStackNavigator':
                         iconName='MSN'
                         break;
-                    case 'BoxObjectModel':
-                        iconName='BOM'
-                        break;
-                    case 'Calculator':
-                        iconName='Ca'
-                        break;
-                    case 'Counter':
-                        iconName='Co'
-                        break;
-                    case 'Dimentions':
-                        iconName='Di'
-                        break;
-                    case 'HelloWorld':
-                        iconName='HW'
-                        break;
-                    case 'Position':
-                        iconName='Po'
+                    case 'TopTabNavigator':
+                        iconName='TTN'
                         break;
                 }
                 return <Text style={{color}}>{iconName}</Text>
@@ -100,12 +60,7 @@ const TabsNavigatorAndroid = () => {
         })}
     >
         <BottomTabAndroid.Screen name="MenuStackNavigator" options={{ title: 'Menu' }} component={MenuStackNavigator} />
-        <BottomTabAndroid.Screen name="BoxObjectModel" component={BoxObjectModel} />
-        <BottomTabAndroid.Screen name="Calculator" component={Calculator} />
-        <BottomTabAndroid.Screen name="Counter" component={Counter} />
-        <BottomTabAndroid.Screen name="Dimentions" component={Dimentions} />
-        <BottomTabAndroid.Screen name="HelloWorld" component={HelloWorld} />
-        <BottomTabAndroid.Screen name="Position" component={Position} />
+        <BottomTabAndroid.Screen name='TopTabNavigator' component={TopTabNavigator} />
     </BottomTabAndroid.Navigator>
   );
     

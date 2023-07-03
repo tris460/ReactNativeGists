@@ -1,9 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MenuStackNavigator from '../screens/MenuStackNavigator';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Platform, Text } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
+import { StackNavigator } from './StackNavigator';
 
 const BottomTabIOS = createBottomTabNavigator();
 const BottomTabAndroid = createMaterialBottomTabNavigator();
@@ -19,7 +19,7 @@ const TabsNavigatorIOS = () => {
             tabBarIcon: ({color, focused, size}) => {
                 let iconName: string = '';
                 switch(route.name) {
-                    case 'MenuStackNavigator':
+                    case 'StackNavigator':
                         iconName='MSN'
                         break;
                     case 'TopTabNavigator':
@@ -30,7 +30,7 @@ const TabsNavigatorIOS = () => {
             }
         })}
         >
-      <BottomTabIOS.Screen name="MenuStackNavigator" options={{ title: 'Menu' }} component={MenuStackNavigator} />
+      <BottomTabIOS.Screen name="StackNavigator" options={{ title: 'Menu' }} component={StackNavigator} />
       <BottomTabIOS.Screen name='TopTabNavigator' component={TopTabNavigator} />
     </BottomTabIOS.Navigator>
   );
@@ -48,7 +48,7 @@ const TabsNavigatorAndroid = () => {
             tabBarIcon: ({color, focused}) => {
                 let iconName: string = '';
                 switch(route.name) {
-                    case 'MenuStackNavigator':
+                    case 'StackNavigator':
                         iconName='MSN'
                         break;
                     case 'TopTabNavigator':
@@ -59,7 +59,7 @@ const TabsNavigatorAndroid = () => {
             }
         })}
     >
-        <BottomTabAndroid.Screen name="MenuStackNavigator" options={{ title: 'Menu' }} component={MenuStackNavigator} />
+        <BottomTabAndroid.Screen name="StackNavigator" options={{ title: 'Menu' }} component={StackNavigator} />
         <BottomTabAndroid.Screen name='TopTabNavigator' component={TopTabNavigator} />
     </BottomTabAndroid.Navigator>
   );

@@ -3,7 +3,7 @@ import { Button, Text, View } from 'react-native';
 import { AuthContext } from '../context/AuthContext';
 
 const HelloWorld = () => {
-  const {authState, signIn} = useContext(AuthContext);
+  const {authState, signIn, logout} = useContext(AuthContext);
 
   return (
     <View style={{
@@ -18,7 +18,8 @@ const HelloWorld = () => {
         <Text>
           {JSON.stringify(authState, null, 4)}
         </Text>
-        {authState.isLoggedIn && <Button title='Sign in' onPress={signIn} />}
+        {!authState.isLoggedIn && <Button title='Sign in' onPress={signIn} />}
+        {authState.isLoggedIn && <Button title='Logout' onPress={logout} />}
       </View>
     )
 }

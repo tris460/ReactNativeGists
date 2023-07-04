@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { AuthContext } from '../context/AuthContext';
 
 const HelloWorld = () => {
-  const {authState} = useContext(AuthContext);
+  const {authState, signIn} = useContext(AuthContext);
 
   return (
     <View style={{
@@ -18,6 +18,7 @@ const HelloWorld = () => {
         <Text>
           {JSON.stringify(authState, null, 4)}
         </Text>
+        {authState.isLoggedIn && <Button title='Sign in' onPress={signIn} />}
       </View>
     )
 }

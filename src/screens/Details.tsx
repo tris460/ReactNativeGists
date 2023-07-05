@@ -2,6 +2,7 @@ import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { RootStackParams } from '../navigation/NavigationStack'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const screenHeight = Dimensions.get('screen').height;
 
@@ -20,6 +21,10 @@ const Details = ({route}: Props) => {
           <View style={styles.dataContainer}>
             <Text style={styles.title}>{movie.original_title}</Text>
             <Text style={styles.subtitle}>{movie.title}</Text>
+            <Icon 
+              name="star-outline"
+              color="red"
+              size={40} />
           </View>
       </View>
     </ScrollView>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import { FullMovie } from '../interfaces/movieInterface'
 import { Cast } from '../interfaces/creditsInterface';
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -34,11 +34,17 @@ const MovieDetails = ({fullMovie, cast}: Props) => {
             </Text>
             <Text style={{fontSize: 16}}>${fullMovie.budget}</Text>
         </View>
-        <View style={{marginHorizontal: 10}}>
+        <View>
             <Text style={styles.title}>
                 Cast
             </Text>
-            <CastItem actor={cast[0]} />
+            <FlatList
+                data={cast}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({item}) => <CastItem actor={item} /> }
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                 />
         </View>
     </View>
     </>
@@ -48,7 +54,7 @@ const MovieDetails = ({fullMovie, cast}: Props) => {
 const styles = StyleSheet.create({
     title: {
         fontSize: 18, 
-        marginVertical: 10, 
+        margin: 10, 
         fontWeight: 'bold', 
         color: '#000'
     }

@@ -11,10 +11,14 @@ const CastItem = ({actor}: Props) => {
 
     return (
         <View style={styles.container}>
-            <Image
-                source={{uri}}
-                style={styles.image} />
-            <View>
+            {
+                actor.profile_path && (
+                    <Image
+                        source={{uri}}
+                        style={styles.image} />
+                )
+            }
+            <View style={{marginStart: 10}}>
                 <Text style={{fontSize: 16, fontWeight: 'bold', color: '#000'}}>
                     {actor.name}
                 </Text>
@@ -29,15 +33,18 @@ const CastItem = ({actor}: Props) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        backgroundColor: '#f00',
+        backgroundColor:'#fff',
+        elevation: 5,
         paddingVertical: 5,
-        borderRadius: 50
+        borderRadius: 50,
+        paddingEnd: 15,
+        marginHorizontal: 5,
+        marginBottom: 20
     },
     image: {
         width: 50,
         height: 50,
         borderRadius: 40,
-        marginEnd: 10
     }
 })
 

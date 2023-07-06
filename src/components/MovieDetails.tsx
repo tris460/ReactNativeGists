@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { FullMovie } from '../interfaces/movieInterface'
 import { Cast } from '../interfaces/creditsInterface';
 import Icon from 'react-native-vector-icons/Ionicons'
+import CastItem from './CastItem';
 
 interface Props {
     fullMovie: FullMovie;
@@ -32,6 +33,12 @@ const MovieDetails = ({fullMovie, cast}: Props) => {
                 Budget
             </Text>
             <Text style={{fontSize: 16}}>${fullMovie.budget}</Text>
+        </View>
+        <View style={{marginHorizontal: 10}}>
+            <Text style={styles.title}>
+                Cast
+            </Text>
+            <CastItem actor={cast[0]} />
         </View>
     </View>
     </>

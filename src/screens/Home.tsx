@@ -1,21 +1,9 @@
 import React from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { FlatList, Text } from 'react-native'
 import { styles } from '../theme/appTheme';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatListItem, ItemSeparator } from '../component/FlatListItem';
-
-const menuItems = [
-    {
-        name: 'Fade Animation',
-        icon: 'albums-outline',
-        component: 'FadeAnimation'
-    },
-    {
-        name: 'Bounce Animation',
-        icon: 'contract-outline',
-        component: 'BounceAnimation'
-    }
-];
+import { menuItems } from '../data/menuItems';
 
 const Home = () => {
 

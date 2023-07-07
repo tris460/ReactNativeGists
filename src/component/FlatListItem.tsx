@@ -3,14 +3,19 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { FlatListItemInterface } from '../interfaces/appInterfaces'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 interface Props {
     menuItem:  FlatListItemInterface;
 }
 
 export const FlatListItem = ({menuItem}: Props) => {
+    const navigation = useNavigation();
+
     return (
-        <TouchableOpacity activeOpacity={0.5}>
+        <TouchableOpacity 
+            activeOpacity={0.5}
+            onPress={() => navigation.navigate(menuItem.component as never)}>
             <View style={{flexDirection: 'row'}}>
                 <Icon 
                     name={menuItem.icon}

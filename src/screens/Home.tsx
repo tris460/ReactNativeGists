@@ -8,19 +8,19 @@ const menuItems = [
     {
         name: 'Fade Animation',
         icon: 'albums-outline',
-        components: 'FadeAnimation'
+        component: 'FadeAnimation'
     },
     {
         name: 'Bounce Animation',
         icon: 'contract-outline',
-        components: 'FadeAnimation'
+        component: 'FadeAnimation'
     }
 ];
 
 const Home = () => {
 
     return (
-        <SafeAreaView style={{flex: 1, ...styles.container}}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.title}>
                 Menu
             </Text>

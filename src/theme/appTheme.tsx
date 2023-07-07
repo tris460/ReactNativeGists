@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingHorizontal: 15,
         backgroundColor: '#fff'
     },
@@ -17,5 +18,11 @@ export const styles = StyleSheet.create({
         color: '#000',
         textAlign: 'center',
         marginVertical: 10,
+    },
+    box: {
+        height: 100, 
+        width: 100,
+        backgroundColor: '#f9c',
+        margin: 50,
     },
 });

@@ -1,32 +1,10 @@
 import React, { useRef } from 'react'
 import { Animated, Button, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
+import { useAnimation } from '../hooks/useAnimation'
 
 const FadeAnimation = () => {
-    const opacity = useRef(new Animated.Value(0)).current;
-
-    const FadeIn = () => {
-        Animated.timing(
-            opacity,
-            {
-                toValue: 1,
-                duration: 1000,
-                useNativeDriver: true
-            }
-        ).start();
-    }
-
-    const FadeOut = () => {
-        Animated.timing(
-            opacity,
-            {
-                toValue: 0,
-                duration: 1000,
-                useNativeDriver: true
-            }
-        ).start();
-    }
-
+    const {FadeIn, FadeOut, opacity} = useAnimation();
     return (
         <View style={{
             ...styles.container, 

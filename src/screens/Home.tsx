@@ -13,7 +13,7 @@ const menuItems = [
     {
         name: 'Bounce Animation',
         icon: 'contract-outline',
-        component: 'FadeAnimation'
+        component: 'BounceAnimation'
     }
 ];
 

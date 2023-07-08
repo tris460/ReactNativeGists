@@ -1,23 +1,43 @@
 import React, { useState } from 'react'
-import { Switch, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
+import SwitchComponent from '../component/SwitchComponent'
 
 const SwitchScreen = () => {
-    const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const [state, setState] = useState({
+        isActive: false,
+        isHungry: false,
+        isHappy: false
+    });
+
+    const onChange = (value: boolean, field: string) => {
+        setState({
+            ...state,
+            [field]: value
+        })
+    }
 
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.title}>
                 Switch
             </Text>
-            <Switch
-                trackColor={{false: '#999', true: '#e9e'}}
-                thumbColor={isEnabled ? '#a1a' : '#ddd'}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-            />
+            <View style={styles.switchContainer}>
+                <Text style={styles.switchText}>isActive</Text>
+                <SwitchComponent isOn={false} onChange={(value) => onChange(value, 'isActive')} />
+            </View>
+            <View style={styles.switchContainer}>
+                <Text style={styles.switchText}>isHungry</Text>
+                <SwitchComponent isOn={false} onChange={(value) => onChange(value, 'isHungry')} />
+            </View>
+            <View style={styles.switchContainer}>
+                <Text style={styles.switchText}>isHappy</Text>
+                <SwitchComponent isOn={false} onChange={(value) => onChange(value, 'isHappy')} />
+            </View>
+            <Text style={styles.subtitle}>Data:</Text>
+            <Text>
+                {JSON.stringify(state, null, 4)}
+            </Text>
         </View>
     )
 }

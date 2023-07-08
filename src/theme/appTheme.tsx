@@ -19,10 +19,27 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         marginVertical: 10,
     },
+    subtitle: {
+        fontSize: 20,
+        fontWeight: '600',
+        marginVertical: 10,
+        marginStart: 10,
+        color: '#000',
+    },
     box: {
         height: 100, 
         width: 100,
         backgroundColor: '#f9c',
         margin: 50,
+    },
+    switchContainer:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginVertical: 5
+    },
+    switchText: {
+        fontSize: 18,
+        color: '#000'
     },
 });

@@ -16,4 +16,9 @@ export const menuItems: FlatListItemInterface[] = [
         icon: 'toggle-outline',
         component: 'Switch'
     },
+    {
+        name: 'Alert',
+        icon: 'alert-circle-outline',
+        component: 'Alert'
+    },
 ];

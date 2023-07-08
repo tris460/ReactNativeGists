@@ -3,6 +3,7 @@ import Home from "../screens/Home";
 import FadeAnimation from "../screens/FadeAnimation";
 import BounceAnimation from "../screens/BounceAnimation";
 import Switch from "../screens/Switch";
+import AlertScreen from "../screens/AlertScreen";
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ const Navigator = () => {
         <Stack.Screen name="FadeAnimation" component={FadeAnimation} />
         <Stack.Screen name="BounceAnimation" component={BounceAnimation} />
         <Stack.Screen name="Switch" component={Switch} />
+        <Stack.Screen name="Alert" component={AlertScreen} />
     </Stack.Navigator>
   )
 }

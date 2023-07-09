@@ -5,13 +5,14 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 const PullToRefresh = () => {
     const [refreshing, setRefreshing] = useState(false);
+    const [data, setData] = useState('');
 
     const onRefresh = () => {
         setRefreshing(true);
         setTimeout(() => {
-            console.log('Refreshed')
+            setData('Refreshed');
             setRefreshing(false)
-        }, 1500);
+        }, 6000);
     }
     return (
         <ScrollView
@@ -19,6 +20,7 @@ const PullToRefresh = () => {
                 <RefreshControl
                     refreshing={refreshing}
                     onRefresh={onRefresh}
+                    colors={['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff']}
                     />
             }
             >
@@ -26,6 +28,9 @@ const PullToRefresh = () => {
                 <Text style={styles.title}>
                     Pull to refresh
                 </Text>
+                {
+                    data && <Text style={styles.subtitle}>{data}</Text>
+                }
             </View>    
         </ScrollView>
     )

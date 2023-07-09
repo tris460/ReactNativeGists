@@ -2,21 +2,15 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, ScrollView, KeyboardAvoidingView, Platform, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { TextInput } from 'react-native-gesture-handler'
+import useForm from '../hooks/useForm'
 
 const TextInputScreen = () => {
-    const [form, setForm] = useState({
+    const {form, onChange} = useForm({
         phone: 0,
         email: '',
         password: '',
         name: '',
     });
-
-    const onChange = (value: string, field: string) => {
-        setForm({
-            ...form,
-            [field]: value
-        })
-    }
 
     return (
         <KeyboardAvoidingView

@@ -21,4 +21,9 @@ export const menuItems: FlatListItemInterface[] = [
         icon: 'alert-circle-outline',
         component: 'Alert'
     },
+    {
+        name: 'Text Input',
+        icon: 'pencil-outline',
+        component: 'TextInputScreen'
+    },
 ];

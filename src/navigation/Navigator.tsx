@@ -4,6 +4,7 @@ import FadeAnimation from "../screens/FadeAnimation";
 import BounceAnimation from "../screens/BounceAnimation";
 import Switch from "../screens/Switch";
 import AlertScreen from "../screens/AlertScreen";
+import TextInputScreen from "../screens/TextInputScreen";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ const Navigator = () => {
         <Stack.Screen name="BounceAnimation" component={BounceAnimation} />
         <Stack.Screen name="Switch" component={Switch} />
         <Stack.Screen name="Alert" component={AlertScreen} />
+        <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
     </Stack.Navigator>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FlatList, Image, Text, View } from 'react-native'
+import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 
 const InfiniteScroll = () => {
@@ -37,6 +37,16 @@ const InfiniteScroll = () => {
                 renderItem={({item}) => renderItem(item)}
                 onEndReached={loadMore}
                 onEndReachedThreshold={0.5}
+                ListFooterComponent={() => (
+                    <View style={{
+                        height: 150,
+                        width: '100%',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <ActivityIndicator size={40} color={'#000'} />
+                    </View>
+                )}
                 />
         </View>
     )

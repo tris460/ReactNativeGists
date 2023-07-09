@@ -26,4 +26,9 @@ export const menuItems: FlatListItemInterface[] = [
         icon: 'pencil-outline',
         component: 'TextInputScreen'
     },
+    {
+        name: 'Pull to refresh',
+        icon: 'refresh-outline',
+        component: 'PullToRefresh'
+    },
 ];

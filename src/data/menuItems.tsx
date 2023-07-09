@@ -36,4 +36,10 @@ export const menuItems: FlatListItemInterface[] = [
         icon: 'list-outline',
         component: 'SectionList'
     },
+
+    {
+        name: 'Modal',
+        icon: 'tablet-landscape-outline',
+        component: 'ModalScreen'
+    },
 ];

@@ -36,10 +36,14 @@ export const menuItems: FlatListItemInterface[] = [
         icon: 'list-outline',
         component: 'SectionList'
     },
-
     {
         name: 'Modal',
         icon: 'tablet-landscape-outline',
         component: 'ModalScreen'
+    },
+    {
+        name: 'Infinite Scroll',
+        icon: 'infinite-outline',
+        component: 'InfiniteScroll'
     },
 ];

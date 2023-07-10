@@ -5,7 +5,8 @@ import styles from '../theme/appTheme';
 import usePokemonPaginator from '../hooks/usePokemonPaginator';
 
 const HomeScreen = () => {
-    usePokemonPaginator();
+    const {simplePokemonList} = usePokemonPaginator();
+    console.log(simplePokemonList);
     
     return (
         <SafeAreaView style={styles.container}>

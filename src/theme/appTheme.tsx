@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { StyleSheet } from "react-native";
+import { ThemeContext } from "../context/theme/ThemeContext";
 
 export const styles = StyleSheet.create({
     container: {
@@ -9,7 +11,7 @@ export const styles = StyleSheet.create({
     separator: {
         width: '100%',
         height: 1,
-        backgroundColor: '#f9c',
+        //backgroundColor: theme.colors.primary,
         marginVertical: 7,
     },
     title: {
@@ -17,17 +19,19 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginVertical: 10,
+        //color: theme.colors.text,
     },
     subtitle: {
         fontSize: 20,
         fontWeight: '600',
         marginVertical: 10,
         marginStart: 10,
+        //color: theme.colors.text,
     },
     box: {
         height: 100, 
         width: 100,
-        backgroundColor: '#f9c',
+        //backgroundColor: theme.colors.primary,
         margin: 50,
     },
     switchContainer:{
@@ -38,10 +42,11 @@ export const styles = StyleSheet.create({
     },
     switchText: {
         fontSize: 18,
+        //color: theme.colors.text,
     },
     button: {
         flexDirection: 'row',
-        backgroundColor: '#f9c',
+        //backgroundColor: theme.colors.primary,
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
@@ -57,7 +62,7 @@ export const styles = StyleSheet.create({
         marginTop: 15
     },
     textInput: {
-        borderColor: '#f9c', 
+        //borderColor: theme.colors.border, 
         borderWidth: 2, 
         fontSize: 20,
         marginTop: 20,

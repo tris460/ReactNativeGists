@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { ThemeContext } from '../context/theme/ThemeContext'
 
 const SettingsScreen = () => {
-    const {setDarkTheme} = useContext(ThemeContext);
+    const { setDarkTheme, setLightTheme } = useContext(ThemeContext);
 
     return (
         <View style={styles.container}>
@@ -16,10 +16,17 @@ const SettingsScreen = () => {
                 Theme
             </Text>
             <TouchableOpacity 
+                style={{...styles.button, marginBottom: 5}}
+                onPress={setLightTheme}>
+                <Text style={styles.textButton}>
+                    Light
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
                 style={styles.button}
                 onPress={setDarkTheme}>
                 <Text style={styles.textButton}>
-                    Light/Dark
+                    Dark
                 </Text>
             </TouchableOpacity>
         </View>

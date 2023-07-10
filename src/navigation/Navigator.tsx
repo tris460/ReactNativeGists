@@ -11,21 +11,18 @@ import ModalScreen from "../screens/ModalScreen";
 import InfiniteScroll from "../screens/InfiniteScroll";
 import SlidesScreen from "../screens/SlidesScreen";
 import SettingsScreen from "../screens/Settings";
-import { DefaultTheme, NavigationContainer, Theme } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
+import { useContext } from "react";
+import { ThemeContext } from "../context/theme/ThemeContext";
 
 const Stack = createStackNavigator();
 
 const Navigator = () => {
-  const customTheme: Theme = {
-    dark: true,
-    colors: {
-      ...DefaultTheme.colors,
-      text: '#fff'
-    }
-  }
-  
+  const {theme} = useContext(ThemeContext);
+
   return (
-    <NavigationContainer theme={customTheme}>
+    <NavigationContainer
+      theme={theme}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="FadeAnimation" component={FadeAnimation} />

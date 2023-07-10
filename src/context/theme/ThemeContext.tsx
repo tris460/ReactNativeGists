@@ -1,21 +1,22 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
+import { ThemeState, lightTheme, themeReducer } from "./ThemeReducer";
 
 interface ThemeContextProps {
-    theme: any;
+    theme: ThemeState;
     setDarkTheme: () => void;
     setLightTheme: () => void;
 }
 export const ThemeContext = createContext({} as ThemeContextProps);
 
 export const ThemeProvider = ({children}: any) => {
-    const theme = {};
+    const [theme, dispatch] = useReducer(themeReducer, lightTheme);
 
     const setDarkTheme = () => {
-        console.log('dark')
+        dispatch({type: 'setDarkTheme'});
     }
 
     const setLightTheme = () => {
-        console.log('light')
+        dispatch({type: 'setLightTheme'});
     }
 
     return (

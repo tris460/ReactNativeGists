@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 15,
         paddingBottom: 30,
-        backgroundColor: '#fff'
     },
     separator: {
         width: '100%',
@@ -16,7 +15,6 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#000',
         textAlign: 'center',
         marginVertical: 10,
     },
@@ -25,7 +23,6 @@ export const styles = StyleSheet.create({
         fontWeight: '600',
         marginVertical: 10,
         marginStart: 10,
-        color: '#000',
     },
     box: {
         height: 100, 
@@ -41,6 +38,5 @@ export const styles = StyleSheet.create({
     },
     switchText: {
         fontSize: 18,
-        color: '#000'
     },
 });

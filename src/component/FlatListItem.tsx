@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { FlatListItemInterface } from '../interfaces/appInterfaces'
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useTheme } from '@react-navigation/native';
 
 interface Props {
     menuItem:  FlatListItemInterface;
@@ -45,7 +45,7 @@ export const ItemSeparator = () => {
 const style = StyleSheet.create({
     titleItem: {
         fontSize: 16,
-        color: '#000',
         marginStart: 12,
+        color: '#000'
     },
 })

@@ -4,14 +4,13 @@ import { styles } from '../theme/appTheme';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatListItem, ItemSeparator } from '../component/FlatListItem';
 import { menuItems } from '../data/menuItems';
+import Title from '../component/Title';
 
 const Home = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>
-                Menu
-            </Text>
+            <Title text='Menu' />
             <FlatList 
                 data={menuItems}
                 keyExtractor={(item) => item.name}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Alert, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Title from '../component/Title'
 
 const AlertScreen = () => {
     const showAlert = () => {
@@ -27,9 +28,7 @@ const AlertScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>
-                Alert
-            </Text>
+            <Title text='Alert' />
             <TouchableOpacity style={{...styles.button}}
                 onPress={ showAlert }
                 >

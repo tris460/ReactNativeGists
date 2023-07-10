@@ -3,6 +3,7 @@ import { Animated, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { useAnimation } from '../hooks/useAnimation'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Title from '../component/Title'
 
 const FadeAnimation = () => {
     const {FadeIn, FadeOut, opacity} = useAnimation();
@@ -12,9 +13,7 @@ const FadeAnimation = () => {
             justifyContent: 'center', 
             alignItems:'center',
             }}>
-            <Text style={styles.title}>
-                Fade Animation
-            </Text>
+            <Title text='Fade Animation' />
             <Animated.View style={{
                 ...styles.box,
                 opacity,

@@ -31,7 +31,7 @@ export const darkTheme: ThemeState = {
         primary: '#f9c',
         background: '#000',
         card: 'orange',
-        text: '#f00',
+        text: '#fff',
         border: 'green',
         notification: 'pink',
     }

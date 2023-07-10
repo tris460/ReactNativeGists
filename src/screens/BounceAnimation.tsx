@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { Animated, PanResponder, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
+import Title from '../component/Title';
 
 const BounceAnimation = () => {
     const pan = useRef(new Animated.ValueXY()).current;
@@ -30,9 +31,7 @@ const BounceAnimation = () => {
             ...styles.container, 
             justifyContent: 'center', 
             alignItems:'center'}}>
-            <Text style={styles.title}>
-                Bounce Animation
-            </Text>
+            <Title text='Bounce Animation' />
             <Animated.View 
                 {...panResponder.panHandlers}
                 style={[styles.box, pan.getLayout()]} />

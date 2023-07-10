@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
+import Title from '../component/Title';
 
 const InfiniteScroll = () => {
     const [numbers, setNumbers] = useState([0,1,2,3,4,5]);
@@ -28,9 +29,7 @@ const InfiniteScroll = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>
-                Infinite Scroll
-            </Text>
+            <Title text='Infinite Scroll' />
             <FlatList
                 data={numbers}
                 keyExtractor={(item) => item.toString()}

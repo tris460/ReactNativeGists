@@ -1,6 +1,7 @@
 import React from 'react'
 import { SectionList, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
+import Title from '../component/Title';
 
 interface Houses {
     house: string;
@@ -25,9 +26,7 @@ const houses: Houses[] = [
 const SectionListScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>
-                Section List
-            </Text>
+            <Title text='Section list' />
             <SectionList
                 sections={ houses }
                 keyExtractor={(item) => item}

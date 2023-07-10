@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import SwitchComponent from '../component/SwitchComponent'
+import Title from '../component/Title'
 
 const SwitchScreen = () => {
     const [state, setState] = useState({
@@ -19,9 +20,7 @@ const SwitchScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>
-                Switch
-            </Text>
+            <Title text='Switch' />
             <View style={styles.switchContainer}>
                 <Text style={styles.switchText}>isActive</Text>
                 <SwitchComponent isOn={false} onChange={(value) => onChange(value, 'isActive')} />

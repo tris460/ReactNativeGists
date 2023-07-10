@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { RefreshControl, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { ScrollView } from 'react-native-gesture-handler'
+import Title from '../component/Title'
 
 const PullToRefresh = () => {
     const [refreshing, setRefreshing] = useState(false);
@@ -25,9 +26,7 @@ const PullToRefresh = () => {
             }
             >
             <View style={styles.container}>
-                <Text style={styles.title}>
-                    Pull to refresh
-                </Text>
+            <Title text='Pull to refresh' />
                 {
                     data && <Text style={styles.subtitle}>{data}</Text>
                 }

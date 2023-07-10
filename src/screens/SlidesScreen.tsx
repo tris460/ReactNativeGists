@@ -4,6 +4,7 @@ import { styles } from '../theme/appTheme'
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import Title from '../component/Title';
 
 interface Slide {
     title: string;
@@ -62,9 +63,7 @@ const SlidesScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>
-                Slides
-            </Text>
+            <Title text='Slides' />
             <Carousel
                 data={items}
                 renderItem={({item}: any) => renderItem(item)}

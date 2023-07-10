@@ -3,6 +3,7 @@ import { Text, ScrollView, KeyboardAvoidingView, Platform, View } from 'react-na
 import { styles } from '../theme/appTheme'
 import { TextInput } from 'react-native-gesture-handler'
 import useForm from '../hooks/useForm'
+import Title from '../component/Title'
 
 const TextInputScreen = () => {
     const {form, onChange} = useForm({
@@ -17,9 +18,7 @@ const TextInputScreen = () => {
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <ScrollView>
                 <View style={styles.container}>
-                    <Text style={styles.title}>
-                        Text Input
-                    </Text>
+                    <Title text='Text input' />
                     <Text style={styles.json}>
                         {JSON.stringify(form, null, 2)}
                     </Text>

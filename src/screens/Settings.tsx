@@ -3,15 +3,14 @@ import { Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { ThemeContext } from '../context/theme/ThemeContext'
+import Title from '../component/Title'
 
 const SettingsScreen = () => {
     const { setDarkTheme, setLightTheme } = useContext(ThemeContext);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>
-                Settings
-            </Text>
+            <Title text='Settings' />
             <Text style={styles.subtitle}>
                 Theme
             </Text>

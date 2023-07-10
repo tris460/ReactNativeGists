@@ -8,8 +8,8 @@ export const styles = StyleSheet.create({
     },
     separator: {
         width: '100%',
-        height: 2,
-        backgroundColor: '#ccc',
+        height: 1,
+        backgroundColor: '#f9c',
         marginVertical: 7,
     },
     title: {
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     },
     button: {
         flexDirection: 'row',
-        backgroundColor: '#000',
+        backgroundColor: '#f9c',
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
@@ -49,7 +49,20 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 15, 
     },
     textButton: {
-        color: '#fff', 
+        color: '#000', 
         fontSize: 18
+    },
+    json: {
+        fontSize: 18, 
+        marginTop: 15
+    },
+    textInput: {
+        borderColor: '#f9c', 
+        borderWidth: 2, 
+        fontSize: 20,
+        marginTop: 20,
+        padding: 10,
+        textAlign: 'center',
+        borderRadius: 10,
     }
 });

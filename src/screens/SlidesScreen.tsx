@@ -78,8 +78,8 @@ const SlidesScreen = () => {
                 <Pagination 
                     dotsLength={items.length}
                     activeDotIndex={activeIndex}
-                    dotColor='#000'
-                    inactiveDotColor='#777' />
+                    dotColor='#f9c'
+                    inactiveDotColor='#c9c' />
                     
                 {activeIndex == items.length -1 ? 
                     <TouchableOpacity style={styles.button}
@@ -90,7 +90,7 @@ const SlidesScreen = () => {
                         </Text>
                         <Icon 
                             name="chevron-forward-outline" 
-                            color='#fff'
+                            color='#000'
                             size= {20} />
                     </TouchableOpacity> 
                     : <></> }

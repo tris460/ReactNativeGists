@@ -15,8 +15,8 @@ const SwitchComponent = ({isOn, onChange}: Props) => {
 
     return (
         <Switch
-            trackColor={{false: '#999', true: '#e9e'}}
-            thumbColor={isEnabled ? '#a1a' : '#ddd'}
+            trackColor={{false: '#999', true: '#c9c'}}
+            thumbColor={isEnabled ? '#f9c' : '#ddd'}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitch}
             value={isEnabled}

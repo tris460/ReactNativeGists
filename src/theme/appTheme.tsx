@@ -39,4 +39,17 @@ export const styles = StyleSheet.create({
     switchText: {
         fontSize: 18,
     },
+    button: {
+        flexDirection: 'row',
+        backgroundColor: '#000',
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 15, 
+    },
+    textButton: {
+        color: '#fff', 
+        fontSize: 18
+    }
 });

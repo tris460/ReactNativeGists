@@ -82,18 +82,10 @@ const SlidesScreen = () => {
                     inactiveDotColor='#777' />
                     
                 {activeIndex == items.length -1 ? 
-                    <TouchableOpacity style={{
-                            flexDirection: 'row',
-                            backgroundColor: '#000',
-                            borderRadius: 15,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            paddingVertical: 10,
-                            paddingHorizontal: 15, 
-                        }}
+                    <TouchableOpacity style={styles.button}
                         onPress={() => navigation.navigate('Home' as never)}
                         >
-                        <Text style={{color: '#fff', fontSize: 18}}>
+                        <Text style={styles.textButton}>
                             Enter
                         </Text>
                         <Icon 

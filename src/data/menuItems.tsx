@@ -51,4 +51,9 @@ export const menuItems: FlatListItemInterface[] = [
         icon: 'easel-outline',
         component: 'SlidesScreen'
     },
+    {
+        name: 'Settings',
+        icon: 'settings-outline',
+        component: 'SettingsScreen'
+    },
 ];

@@ -1,20 +1,19 @@
-import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native'
 import React from 'react'
 import Navigator from './src/navigation/Navigator'
-
-const customTheme: Theme = {
-  dark: true,
-  colors: {
-    ...DefaultTheme.colors,
-    text: '#fff'
-  }
-}
+import { ThemeProvider } from './src/context/theme/ThemeContext'
 
 const App = () => {
   return (
-    <NavigationContainer theme={customTheme}>
+    <AppState>
       <Navigator />
-    </NavigationContainer>
+    </AppState>
+  )
+}
+const AppState = ({children}: any) => {
+  return (
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
   )
 }
 

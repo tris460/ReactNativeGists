@@ -46,4 +46,9 @@ export const menuItems: FlatListItemInterface[] = [
         icon: 'infinite-outline',
         component: 'InfiniteScroll'
     },
+    {
+        name: 'Slides',
+        icon: 'easel-outline',
+        component: 'SlidesScreen'
+    },
 ];

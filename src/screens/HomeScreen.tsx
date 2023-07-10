@@ -2,8 +2,11 @@ import React from 'react'
 import { Image, SafeAreaView, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from '../theme/appTheme';
+import usePokemonPaginator from '../hooks/usePokemonPaginator';
 
 const HomeScreen = () => {
+    usePokemonPaginator();
+    
     return (
         <SafeAreaView style={styles.container}>
             <Image 

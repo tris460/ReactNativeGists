@@ -1,12 +1,10 @@
 import React from 'react'
-import { Image, SafeAreaView, View } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons';
+import { ActivityIndicator, FlatList, Image, SafeAreaView, Text, View } from 'react-native';
 import styles from '../theme/appTheme';
 import usePokemonPaginator from '../hooks/usePokemonPaginator';
 
 const HomeScreen = () => {
-    const {simplePokemonList} = usePokemonPaginator();
-    console.log(simplePokemonList);
+    const {simplePokemonList, loadPokemon} = usePokemonPaginator();
     
     return (
         <SafeAreaView style={styles.container}>
@@ -19,8 +17,15 @@ const HomeScreen = () => {
                     style={styles.titleImage}
                     resizeMode='contain'/>
             </View>
-            <Icon name="rocket" size={30} color="#900" />
-        </SafeAreaView>
+            <FlatList 
+                data={simplePokemonList}
+                keyExtractor={(pokemon) => pokemon.id}
+                renderItem={({item}) => <Text>{item.name}</Text>}
+                onEndReached={loadPokemon}
+                onEndReachedThreshold={0.5}
+                showsVerticalScrollIndicator={false}
+                ListFooterComponent={(<ActivityIndicator style={{height: 60}} size={20} color='#777' />)} />
+        </SafeAreaView> 
     )
 }
 

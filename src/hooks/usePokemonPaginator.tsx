@@ -34,6 +34,7 @@ const usePokemonPaginator = () => {
     return {
         isLoading,
         simplePokemonList,
+        loadPokemon,
     }
 }
 

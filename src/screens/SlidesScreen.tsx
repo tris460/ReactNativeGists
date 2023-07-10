@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Dimensions, Image, ImageSourcePropType, Text, View } from 'react-native'
+import { Dimensions, Image, ImageSourcePropType, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import Carousel, {Pagination} from 'react-native-snap-carousel';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 interface Slide {
     title: string;
@@ -31,7 +33,8 @@ const {width:screenWidth} = Dimensions.get('window')
 
 const SlidesScreen = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-
+    const navigation = useNavigation();
+    
     const renderItem = (item: Slide) => {
         return (
             <View style={{
@@ -71,11 +74,35 @@ const SlidesScreen = () => {
                     setActiveIndex(index)
                 }}
                 />
-            <Pagination 
-                dotsLength={items.length}
-                activeDotIndex={activeIndex}
-                dotColor='#000'
-                inactiveDotColor='#777' />
+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+                <Pagination 
+                    dotsLength={items.length}
+                    activeDotIndex={activeIndex}
+                    dotColor='#000'
+                    inactiveDotColor='#777' />
+                    
+                {activeIndex == items.length -1 ? 
+                    <TouchableOpacity style={{
+                            flexDirection: 'row',
+                            backgroundColor: '#000',
+                            borderRadius: 15,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            paddingVertical: 10,
+                            paddingHorizontal: 15, 
+                        }}
+                        onPress={() => navigation.navigate('Home' as never)}
+                        >
+                        <Text style={{color: '#fff', fontSize: 18}}>
+                            Enter
+                        </Text>
+                        <Icon 
+                            name="chevron-forward-outline" 
+                            color='#fff'
+                            size= {20} />
+                    </TouchableOpacity> 
+                    : <></> }
+            </View>
         </View>
     )
 }

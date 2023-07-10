@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Text, ScrollView, KeyboardAvoidingView, Platform, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import { TextInput } from 'react-native-gesture-handler'
 import useForm from '../hooks/useForm'
 import Title from '../component/Title'
+import { ThemeContext } from '../context/theme/ThemeContext'
 
 const TextInputScreen = () => {
+    const {theme: {colors}} = useContext(ThemeContext);
     const {form, onChange} = useForm({
         phone: 0,
         email: '',
@@ -19,32 +21,36 @@ const TextInputScreen = () => {
             <ScrollView>
                 <View style={styles.container}>
                     <Title text='Text input' />
-                    <Text style={styles.json}>
+                    <Text style={{...styles.json, color: colors.text}}>
                         {JSON.stringify(form, null, 2)}
                     </Text>
                     <TextInput
-                        style={styles.textInput}
+                        style={{...styles.textInput, borderColor: colors.border, color: colors.text}}
                         onChangeText={(value) => onChange(value, 'name')}
+                        placeholderTextColor={colors.card}
                         placeholder="Name"
                         keyboardType="default"
                         autoCapitalize='words'
                     />
                     <TextInput
-                        style={styles.textInput}
+                        style={{...styles.textInput, borderColor: colors.border, color: colors.text}}
                         onChangeText={(value) => onChange(value, 'email')}
+                        placeholderTextColor={colors.card}
                         placeholder="Email"
                         keyboardType="email-address"
                         autoCapitalize='none'
                     />
                     <TextInput
-                        style={styles.textInput}
+                        style={{...styles.textInput, borderColor: colors.border, color: colors.text}}
                         onChangeText={(value) => onChange(value, 'password')}
+                        placeholderTextColor={colors.card}
                         placeholder="Password"
                         keyboardType="visible-password"
                     />
                     <TextInput
-                        style={styles.textInput}
+                        style={{...styles.textInput, borderColor: colors.border, color: colors.text}}
                         onChangeText={(value) => onChange(value, 'phone')}
+                        placeholderTextColor={colors.card}
                         placeholder="Phone"
                         keyboardType="phone-pad"
                     />

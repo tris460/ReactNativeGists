@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { SectionList, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import Title from '../component/Title';
+import { ThemeContext } from '../context/theme/ThemeContext';
 
 interface Houses {
     house: string;
@@ -24,6 +25,8 @@ const houses: Houses[] = [
 ]
 
 const SectionListScreen = () => {
+    const {theme: {colors}} = useContext(ThemeContext);
+
     return (
         <View style={styles.container}>
             <Title text='Section list' />
@@ -31,8 +34,14 @@ const SectionListScreen = () => {
                 sections={ houses }
                 keyExtractor={(item) => item}
                 stickySectionHeadersEnabled
-                renderItem={({item}) => <Text style={styles.switchText}>{item}</Text>}
-                renderSectionHeader={({section}) => <Text style={styles.subtitle}>{section.house}</Text>}
+                renderItem={({item}) => (
+                    <Text style={{...styles.switchText, color: colors.text}}>
+                        {item}
+                    </Text>)}
+                renderSectionHeader={({section}) => (
+                    <Text style={{...styles.subtitle, color: colors.text}}>
+                        {section.house}
+                    </Text>)}
                 />
         </View>
     )

@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { Dimensions, Image, ImageSourcePropType, Text, TouchableOpacity, View } from 'react-native'
+import React, { useContext, useState } from 'react'
+import { Dimensions, Image, ImageSourcePropType, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 import Carousel, {Pagination} from 'react-native-snap-carousel';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import Title from '../component/Title';
+import ButtonComponent from '../component/ButtonComponent';
+import { ThemeContext } from '../context/theme/ThemeContext';
 
 interface Slide {
     title: string;
@@ -33,6 +34,7 @@ const items: Slide[] = [
 const {width:screenWidth} = Dimensions.get('window')
 
 const SlidesScreen = () => {
+    const {theme: {colors}} = useContext(ThemeContext);
     const [activeIndex, setActiveIndex] = useState(0);
     const navigation = useNavigation();
     
@@ -40,7 +42,7 @@ const SlidesScreen = () => {
         return (
             <View style={{
                 flex: 1,
-                backgroundColor: '#fff',
+                backgroundColor: colors.background,
                 padding: 10,
                 justifyContent: 'center',
             }}>
@@ -51,10 +53,10 @@ const SlidesScreen = () => {
                         height: 400,
                         resizeMode: 'contain'
                     }} />
-                    <Text style={styles.subtitle}>
+                    <Text style={{...styles.subtitle, color: colors.text}}>
                         {item.title}
                     </Text>
-                    <Text style={styles.switchText}>
+                    <Text style={{...styles.switchText, color: colors.text}}>
                         {item.desc}
                     </Text>
             </View>
@@ -81,17 +83,7 @@ const SlidesScreen = () => {
                     inactiveDotColor='#c9c' />
                     
                 {activeIndex == items.length -1 ? 
-                    <TouchableOpacity style={styles.button}
-                        onPress={() => navigation.navigate('Home' as never)}
-                        >
-                        <Text style={styles.textButton}>
-                            Enter
-                        </Text>
-                        <Icon 
-                            name="chevron-forward-outline" 
-                            color='#000'
-                            size= {20} />
-                    </TouchableOpacity> 
+                    <ButtonComponent onPress={() => navigation.navigate('Home' as never)} title='Enter' icon='chevron-forward-outline' />
                     : <></> }
             </View>
         </View>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Modal, Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import Title from '../component/Title';
+import ButtonComponent from '../component/ButtonComponent';
 
 const ModalScreen = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -10,14 +10,7 @@ const ModalScreen = () => {
     return (
         <View style={styles.container}>
             <Title text='Modal' />
-            <TouchableOpacity style={{...styles.button}}
-                onPress={() => setIsVisible(true)}
-                >
-                <Text style={styles.textButton}>
-                    Show modal
-                </Text>
-            </TouchableOpacity>
-
+            <ButtonComponent onPress={() => setIsVisible(true)} title='Show modal' />
             <Modal
                 animationType='slide'
                 visible={isVisible}

@@ -1,33 +1,22 @@
 import React, { useContext } from 'react'
 import { Text, View } from 'react-native'
 import { styles } from '../theme/appTheme'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { ThemeContext } from '../context/theme/ThemeContext'
 import Title from '../component/Title'
+import ButtonComponent from '../component/ButtonComponent'
 
 const SettingsScreen = () => {
     const { setDarkTheme, setLightTheme } = useContext(ThemeContext);
+    const {theme: {colors}} = useContext(ThemeContext);
 
     return (
         <View style={styles.container}>
             <Title text='Settings' />
-            <Text style={styles.subtitle}>
+            <Text style={{...styles.subtitle, color: colors.text}}>
                 Theme
             </Text>
-            <TouchableOpacity 
-                style={{...styles.button, marginBottom: 5}}
-                onPress={setLightTheme}>
-                <Text style={styles.textButton}>
-                    Light
-                </Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                style={styles.button}
-                onPress={setDarkTheme}>
-                <Text style={styles.textButton}>
-                    Dark
-                </Text>
-            </TouchableOpacity>
+            <ButtonComponent onPress={setLightTheme} title='Light' btnStyles={{marginBottom: 5}}/>
+            <ButtonComponent onPress={setDarkTheme} title='Dark' />
         </View>
     )
 }

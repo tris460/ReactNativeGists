@@ -16,9 +16,9 @@ export const lightTheme: ThemeState = {
     colors: {
         primary: '#f9c',
         background: '#fff',
-        card: 'orange',
+        card: '#777',
         text: '#000',
-        border: 'green',
+        border: '#f9c',
         notification: 'pink',
     }
 }
@@ -30,9 +30,9 @@ export const darkTheme: ThemeState = {
     colors: {
         primary: '#f9c',
         background: '#000',
-        card: 'orange',
+        card: '#777',
         text: '#fff',
-        border: 'green',
+        border: '#f9c',
         notification: 'pink',
     }
 }

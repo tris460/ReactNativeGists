@@ -19,6 +19,33 @@ const styles = StyleSheet.create({
     },
     titleImage: {
         height: 100,
+    },
+    cardContainer: {
+        backgroundColor: 'red',
+        borderRadius: 10,
+        margin: 5,
+        padding: 10,
+        height: 100,
+    },
+    cardName: {
+        fontSize: 18,
+        color: '#fff',
+        fontWeight: 'bold'
+    },
+    cardPokeball: {
+        width: 100,
+        height: 100,
+        position: 'absolute',
+        bottom: -15,
+        right: -15,
+        opacity: 0.7
+    },
+    cardPicture: {
+        width: 100,
+        height: 100,
+        position: 'absolute',
+        bottom: -12,
+        right: -10,
     }
 });
 

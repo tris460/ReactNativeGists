@@ -2,6 +2,7 @@ import React from 'react'
 import { ActivityIndicator, FlatList, Image, SafeAreaView, Text, View } from 'react-native';
 import styles from '../theme/appTheme';
 import usePokemonPaginator from '../hooks/usePokemonPaginator';
+import PokemonCard from '../components/PokemonCard';
 
 const HomeScreen = () => {
     const {simplePokemonList, loadPokemon} = usePokemonPaginator();
@@ -17,14 +18,17 @@ const HomeScreen = () => {
                     style={styles.titleImage}
                     resizeMode='contain'/>
             </View>
-            <FlatList 
-                data={simplePokemonList}
-                keyExtractor={(pokemon) => pokemon.id}
-                renderItem={({item}) => <Text>{item.name}</Text>}
-                onEndReached={loadPokemon}
-                onEndReachedThreshold={0.5}
-                showsVerticalScrollIndicator={false}
+            <View style={{alignItems: 'center'}}>
+                <FlatList 
+                    data={simplePokemonList}
+                    keyExtractor={(pokemon) => pokemon.id}
+                    renderItem={({item}) => <PokemonCard pokemon={item} />}
+                    onEndReached={loadPokemon}
+                    onEndReachedThreshold={0.5}
+                    showsVerticalScrollIndicator={false}
+                    numColumns={2}
                 ListFooterComponent={(<ActivityIndicator style={{height: 60}} size={20} color='#777' />)} />
+            </View>
         </SafeAreaView> 
     )
 }

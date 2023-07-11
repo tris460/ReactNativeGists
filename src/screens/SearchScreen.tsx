@@ -1,11 +1,13 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import SearchInput from '../components/SearchInput'
+import styles from '../theme/appTheme'
 
 const SearchScreen = () => {
   return (
-    <View>
-        <Text>SearchScreen</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+        <SearchInput />
+    </SafeAreaView>
   )
 }
 

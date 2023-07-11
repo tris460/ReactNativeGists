@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActivityIndicator, FlatList, Image, SafeAreaView, Text, View } from 'react-native';
+import { ActivityIndicator, FlatList, Image, SafeAreaView, View } from 'react-native';
 import styles from '../theme/appTheme';
 import usePokemonPaginator from '../hooks/usePokemonPaginator';
 import PokemonCard from '../components/PokemonCard';
@@ -27,7 +27,7 @@ const HomeScreen = () => {
                     onEndReachedThreshold={0.5}
                     showsVerticalScrollIndicator={false}
                     numColumns={2}
-                ListFooterComponent={(<ActivityIndicator style={{height: 60}} size={20} color='#777' />)} />
+                    ListFooterComponent={(<ActivityIndicator style={{height: 60}} size={20} color='#f00' />)} />
             </View>
         </SafeAreaView> 
     )

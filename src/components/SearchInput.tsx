@@ -22,7 +22,8 @@ const SearchInput = () => {
 }
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+    },
     inputBackground: {
         backgroundColor: '#eee',
         borderRadius: 10,

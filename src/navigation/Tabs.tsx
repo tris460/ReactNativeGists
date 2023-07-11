@@ -3,6 +3,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { View } from 'react-native';
+import PokemonScreen from '../screens/PokemonScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +49,20 @@ export const Tabs = () => {
                         color={color} 
                         size={20} 
                         name="search-outline" />)
+            }}/>
+        <Tab.Screen 
+            name="PokemonScreen" 
+            component={PokemonScreen} 
+
+            options={{
+                tabBarStyle: {display: 'none'},
+                tabBarButton: () => null,
+                tabBarLabel: 'Pokemon',
+                tabBarIcon: (({color}) => 
+                    <Icon 
+                        color={color} 
+                        size={20} 
+                        name="paw-outline" />)
             }}/>
     </Tab.Navigator>
   );

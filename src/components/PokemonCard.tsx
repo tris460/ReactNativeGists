@@ -3,7 +3,6 @@ import { SimplePokemon } from '../interfaces/pokemonInterfaces'
 import { Dimensions, Image, Text, TouchableOpacity, View } from 'react-native';
 import styles from '../theme/appTheme';
 import { useNavigation } from '@react-navigation/native';
-
 interface Props {
     pokemon: SimplePokemon;
 }

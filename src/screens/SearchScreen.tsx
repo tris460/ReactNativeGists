@@ -17,9 +17,16 @@ const SearchScreen = () => {
             return setFilteredPokemon([]);
         }
 
-        setFilteredPokemon(
-            simplePokemonList.filter(pokemon =>  pokemon.name.toLowerCase().includes(term.toLowerCase()))
-        )
+        if(isNaN(Number(term))) {
+            setFilteredPokemon(
+                simplePokemonList.filter(pokemon =>  pokemon.name.toLowerCase().includes(term.toLowerCase()))
+            );
+        } else {
+            const pokemonById = simplePokemonList.find(pokemon => pokemon.id === term);
+            setFilteredPokemon(
+                (pokemonById) ? [pokemonById] : []
+            );
+        }
     }, [term]);
 
     if(isLoading) {
@@ -31,7 +38,7 @@ const SearchScreen = () => {
         )
     }
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={{...styles.container, marginBottom: 0}}>
             <SearchInput 
                 onDebounce={setTerm}/>
             <FlatList 

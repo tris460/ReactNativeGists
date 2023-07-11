@@ -1,10 +1,27 @@
+import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Image, Text, View } from 'react-native'
+import { RootStackParams } from '../navigation/StackNavigation'
+import styles from '../theme/appTheme'
 
-const PokemonScreen = () => {
+interface Props extends StackScreenProps<RootStackParams, 'PokemonScreen'> {}
+
+const PokemonScreen = ({navigation, route}: Props) => {
+    const {simplePokemon} = route.params;
+
     return (
         <View>
-            <Text>Pokemon</Text>
+            <View style={styles.detailsImageContainer}>
+                <Text style={styles.detailsName}>
+                    {simplePokemon.name} #{simplePokemon.id}
+                </Text>
+                <Image
+                    source={require('../assets/pokeball-white.png')} 
+                    style={styles.detailsPokeball} />
+                <Image 
+                    source={{uri: simplePokemon.picture}} 
+                    style={styles.detailsPicture} />
+            </View>
         </View>
     )
 }

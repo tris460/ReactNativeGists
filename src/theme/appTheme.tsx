@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         height: 100,
     },
     cardContainer: {
-        backgroundColor: 'red',
+        backgroundColor: '#f00',
         borderRadius: 10,
         margin: 5,
         padding: 10,
@@ -46,6 +46,30 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: -12,
         right: -10,
+    },
+    detailsImageContainer: {
+        height: 290,
+        backgroundColor: '#f00',
+        alignItems: 'center',
+        borderBottomRightRadius: 200,
+        borderBottomLeftRadius: 200
+    },
+    detailsName: {
+        fontSize: 25,
+        textTransform: 'capitalize',
+        color: '#fff',
+        fontWeight: '600',
+        margin: 10,
+    },
+    detailsPokeball: {
+        height: 230,
+        width: 230,
+    },
+    detailsPicture: {
+        width: 250,
+        height: 250,
+        position: 'absolute',
+        bottom: -25,
     }
 });
 

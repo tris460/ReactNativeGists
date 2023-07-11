@@ -19,6 +19,8 @@ export const Tabs = () => {
             },
             tabBarStyle: {
                 elevation: 0,
+                position: 'absolute',
+                backgroundColor: '#fffd'
             },
         }}
          >

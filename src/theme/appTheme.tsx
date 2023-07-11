@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#f00',
         alignItems: 'center',
         borderBottomRightRadius: 200,
-        borderBottomLeftRadius: 200
+        borderBottomLeftRadius: 200,
+        zIndex: 1
     },
     detailsName: {
         fontSize: 25,
@@ -70,6 +71,27 @@ const styles = StyleSheet.create({
         height: 250,
         position: 'absolute',
         bottom: -25,
+    },
+    loadingIndicator: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    title: {
+        fontSize: 22,
+        fontWeight: '600',
+        color: '#000',
+        marginVertical: 10,
+        marginStart: 25,
+    },
+    data: {
+        fontSize: 18,
+        textTransform: 'capitalize',
+        color: '#000',
+        marginStart: 20,
+    },
+    sprites: {
+        width: 100,
+        height: 100,
     }
 });
 

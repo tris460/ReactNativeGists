@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, TextInput, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import useDebounceValue from '../hooks/useDebounceValue';
 
 const SearchInput = () => {
+    const [textValue, setTextValue] = useState('');
+    const debouncedValue = useDebounceValue(textValue);
+    
+    useEffect(() => {
+        console.log({debouncedValue})
+    }, [debouncedValue]);
+    
+
     return (
         <View style={styles.container}>
             <View style={styles.inputBackground}>
@@ -11,7 +20,9 @@ const SearchInput = () => {
                     placeholderTextColor={'#777'}
                     style={styles.input}
                     autoCapitalize='none'
-                    autoCorrect={false} />
+                    autoCorrect={false}
+                    value={textValue}
+                    onChangeText={setTextValue} />
                 <Icon
                     name="search-outline"
                     size={20}

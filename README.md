@@ -3,8 +3,7 @@ This project shows how to implement permission requests in Android, users can gr
 
 ### Permissions
 This screen will show the prompt once you click the button.
-[!PermissionsScreen](./src/assets/PermissionsScreen.png)
-
+<img src="https://github.com/tris460/ReactNativeGists/blob/pokedex/src/assets/PermissionScreen.png" width="180" height="300">
 ### Maps
 If you accepted the permissions before, you will be redirected to this screen, which only shows a message informing that you accepted the location permission.
-[!PermissionsScreen](./src/assets/MapsScreen.png)
+<img src="https://github.com/tris460/ReactNativeGists/blob/pokedex/src/assets/MapsScreen.png" width="180" height="300">

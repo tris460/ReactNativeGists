@@ -8,14 +8,15 @@ const Stack = createStackNavigator();
 const StackNavigation = () => {
     return (
         <Stack.Navigator
+            initialRouteName='PermissionsScreen'
             screenOptions={{
                 headerShown: false,
                 cardStyle: {
                     backgroundColor: '#000'
                 }
             }}>
-            <Stack.Screen name='MapScreen' component={MapScreen} />
             <Stack.Screen name='PermissionsScreen' component={PermissionsScreen} />
+            <Stack.Screen name='MapScreen' component={MapScreen} />
         </Stack.Navigator>
     )
 }

@@ -1,20 +1,10 @@
-import React from 'react'
-import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useContext } from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
-import { PERMISSIONS, PermissionStatus, request } from 'react-native-permissions';
+import { PermissionsContext } from '../context/PermissionContext';
 
 const PermissionsScreen = () => {
-    const checkLocationPermission = async() => {
-        let permissionStatus: PermissionStatus;
-
-        if(Platform.OS === 'ios') {
-            permissionStatus = await request(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE);
-        } else {
-            permissionStatus = await request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
-        }
-
-        console.log(permissionStatus)
-    }
+    const { permissions, askLocationPermission } = useContext(PermissionsContext);
 
     return (
         <View style={styles.container}>
@@ -22,9 +12,12 @@ const PermissionsScreen = () => {
             <Icon name="rocket" size={30} color="#900" />
             <TouchableOpacity
                 style={styles.button}
-                onPress={checkLocationPermission}>
+                onPress={askLocationPermission}>
                     <Text style={styles.buttonText}>Permiso de localizacion</Text>
             </TouchableOpacity>
+            <Text style={{color:'#fff'}}>
+                {JSON.stringify(permissions, null, 3)}
+            </Text>
         </View>
     )
 }

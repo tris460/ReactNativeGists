@@ -1,10 +1,11 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { ActivityIndicator, View } from 'react-native'
+import { globalStyles } from '../theme/appTheme'
 
 const LoadingScreen = () => {
     return (
-        <View>
-            <Text>LoadingScreen</Text>
+        <View style={globalStyles.alignCenter}>
+            <ActivityIndicator size={50} color={'#991893'}/>
         </View>
     )
 }

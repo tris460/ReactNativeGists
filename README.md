@@ -14,16 +14,16 @@ The following screens are implemented in this project:
 - Slides
 - Dark/Light mode
 
-[!Menu](./src/assets/Readme/Menu.png)
-[!Fade](./src/assets/Readme/Fade.png)
-[!Bounce](./src/assets/Readme/Bounce.png)
-[!Switch](./src/assets/Readme/Switch.png)
-[!Alert](./src/assets/Readme/Alert.png)
-[!Input](./src/assets/Readme/Input.png)
-[!Refresh](./src/assets/Readme/refresh.png)
-[!List](./src/assets/Readme/List.png)
-[!Modal](./src/assets/Readme/Modal.png)
-[!Scroll](./src/assets/Readme/Scroll.png)
-[!Slides](./src/assets/Readme/Slides.png)
-[!Settings](./src/assets/Readme/Settings.png)
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Menu.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Fade.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Bounce.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Switch.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Alert.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Input.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/refresh.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/List.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Modal.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Scroll.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Slides.png" width="180" height="300">
+<img src="https://github.com/tris460/ReactNativeGists/blob/components/src/assets/Readme/Settings.png" width="180" height="300">
 

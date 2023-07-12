@@ -1,12 +1,12 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-const PokemonScreen = () => {
+const LoadingScreen = () => {
     return (
         <View>
-            <Text>Pokemon</Text>
+            <Text>LoadingScreen</Text>
         </View>
     )
 }
 
-export default PokemonScreen
+export default LoadingScreen
